@@ -27,6 +27,18 @@ export const navItems = [
     name: 'Components'
   },
   {
+    name: 'E-Attandance',
+    url : '.eattandance',
+    icon: 'icon-puzzle',
+    children: [
+      {
+        name:'Organization',
+        url : '/eattandance/organization',
+        icon: 'icon-puzzle'
+      }
+    ]
+  },
+  {
     name: 'Base',
     url: '/base',
     icon: 'icon-puzzle',

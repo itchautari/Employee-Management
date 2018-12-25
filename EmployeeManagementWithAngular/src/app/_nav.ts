@@ -38,7 +38,7 @@ icon:'icon-puzzle',
 children:[
   {
     name:'Organization',
-    url:'',
+    url: '/eattandance/organization',
     icon:'icon-bell'
   },
   {

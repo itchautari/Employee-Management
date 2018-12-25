@@ -1,3 +1,56 @@
-<p>
-    organization-information works!
-</p>
+<div class="animated fadeIn">
+    <div class="row">
+        <form  [formGroup]="form">
+            
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="name">Organization Name</label>
+                    <input type="text" formControlName="ogrInf.organizationName_En" class="form-control" id="orgName" placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Pan No.</label>
+                    <input type="text" formControlName="ogrInf.panNo"  class="form-control" id="panNo" placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Address</label>
+                    <input type="text" formControlName="ogrInf.address_En" class="form-control" id="address" placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Contact No.</label>
+                    <input type="text" formControlName="ogrInf.contactNo" class="form-control" id="contactno" placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Email</label>
+                    <input type="text" formControlName="ogrInf.email" class="form-control" id="email" placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Website</label>
+                    <input type="text" formControlName="ogrInf.website" class="form-control" id="website" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="name">Logo</label>
+                    <input type="file" formControlName="ogrInf.logo" class="form-control" id="fiLogo" placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Eatablish Date:</label>
+                    <input type="file" formControlName="ogrInf.establishedDate_AD" class="form-control" id="estdate" placeholder="Enter your name">
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button class="btn btn-secondary" type="button" style="margin-left:5px">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Reset</button>
+                </div>
+
+            </div>
+
+
+        </form>
+    </div>
+</div>

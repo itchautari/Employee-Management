@@ -1,0 +1,16 @@
+export interface Organization {
+    organizationId: number,
+    organizationName_En: string,
+    organizationName_Np: string,
+    panNo: string,
+    address_En: string,
+    address_Np: string,
+    contactNo: string,
+    email: string,
+    website: string,
+    logo: string,
+    establishedDate_AD: string,
+    establishedDate_BS: string,
+    createDate_AD: string,
+    createDate_BS: string,
+}

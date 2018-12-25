@@ -37,7 +37,7 @@ url:'/setup',
 icon:'icon-puzzle',
 children:[
   {
-    name:'one',
+    name:'Organization',
     url:'',
     icon:'icon-bell'
   },

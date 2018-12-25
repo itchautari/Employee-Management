@@ -2,42 +2,147 @@ export const navItems = [
   {
     name: 'Dashboard',
     url: '/dashboard',
-    icon: 'icon-speedometer',
-    badge: {
-      variant: 'info',
-      text: 'NEW'
-    }
+    icon: 'icon-speedometer'
   },
   {
     title: true,
-    name: 'Theme'
+    name: 'Actions'
   },
+  //-----------------project Parts----------------------------
   {
-    name: 'Colors',
-    url: '/theme/colors',
-    icon: 'icon-drop'
-  },
-  {
-    name: 'Typography',
-    url: '/theme/typography',
-    icon: 'icon-pencil'
-  },
-  {
-    title: true,
-    name: 'Components'
-  },
-  {
-    name: 'E-Attandance',
-    url : '.eattandance',
-    icon: 'icon-puzzle',
-    children: [
+    name:"System",
+    url:'/setup',
+    icon:'icon-puzzle',
+    children:[
       {
-        name:'Organization',
-        url : '/eattandance/organization',
-        icon: 'icon-puzzle'
+        name:'one',
+        url:'',
+        icon:'icon-bell'
+      },
+      {
+        name:'one',
+        url:'',
+        icon:'icon-bell'
+      },
+      {
+        name:'one',
+        url:'',
+        icon:'icon-bell'
       }
     ]
+    },
+{
+name:"Set Up",
+url:'/setup',
+icon:'icon-puzzle',
+children:[
+  {
+    name:'one',
+    url:'',
+    icon:'icon-bell'
   },
+  {
+    name:'one',
+    url:'',
+    icon:'icon-bell'
+  },
+  {
+    name:'one',
+    url:'',
+    icon:'icon-bell'
+  }
+]
+},
+{
+  name:"Activities",
+  url:'/setup',
+  icon:'icon-puzzle',
+  children:[
+    {
+      name:'one',
+      url:'',
+      icon:'icon-bell'
+    },
+    {
+      name:'one',
+      url:'',
+      icon:'icon-bell'
+    },
+    {
+      name:'one',
+      url:'',
+      icon:'icon-bell'
+    }
+  ]
+  },
+  {
+    name:"Reports",
+    url:'/setup',
+    icon:'icon-puzzle',
+    children:[
+      {
+        name:'one',
+        url:'',
+        icon:'icon-bell'
+      },
+      {
+        name:'one',
+        url:'',
+        icon:'icon-bell'
+      },
+      {
+        name:'one',
+        url:'',
+        icon:'icon-bell'
+      }
+    ]
+    },
+    {
+      name:"Users",
+      url:'/setup',
+      icon:'icon-puzzle',
+      children:[
+        {
+          name:'one',
+          url:'',
+          icon:'icon-bell'
+        },
+        {
+          name:'one',
+          url:'',
+          icon:'icon-bell'
+        },
+        {
+          name:'one',
+          url:'',
+          icon:'icon-bell'
+        }
+      ]
+      },
+
+      {
+        name:"Other",
+        url:'/setup',
+        icon:'icon-puzzle',
+        children:[
+          {
+            name:'Access Control',
+            url:'',
+            icon:'icon-bell'
+          },
+          {
+            name:'one',
+            url:'',
+            icon:'icon-bell'
+          },
+          {
+            name:'one',
+            url:'',
+            icon:'icon-bell'
+          }
+        ]
+        },
+//-----------------end project parts--------------------------------
   {
     name: 'Base',
     url: '/base',
@@ -192,64 +297,5 @@ export const navItems = [
       variant: 'info',
       text: 'NEW'
     }
-  },
-  {
-    divider: true
-  },
-  {
-    title: true,
-    name: 'Extras',
-  },
-  {
-    name: 'Pages',
-    url: '/pages',
-    icon: 'icon-star',
-    children: [
-      {
-        name: 'Login',
-        url: '/login',
-        icon: 'icon-star'
-      },
-      {
-        name: 'Register',
-        url: '/register',
-        icon: 'icon-star'
-      },
-      {
-        name: 'Error 404',
-        url: '/404',
-        icon: 'icon-star'
-      },
-      {
-        name: 'Error 500',
-        url: '/500',
-        icon: 'icon-star'
-      }
-    ]
-  },
-  {
-    name: 'Disabled',
-    url: '/dashboard',
-    icon: 'icon-ban',
-    badge: {
-      variant: 'secondary',
-      text: 'NEW'
-    },
-    attributes: { disabled: true },
-  },
-  {
-    name: 'Download CoreUI',
-    url: 'http://coreui.io/angular/',
-    icon: 'icon-cloud-download',
-    class: 'mt-auto',
-    variant: 'success',
-    attributes: { target: '_blank', rel: 'noopener' }
-  },
-  {
-    name: 'Try CoreUI PRO',
-    url: 'http://coreui.io/pro/angular/',
-    icon: 'icon-layers',
-    variant: 'danger',
-    attributes: { target: '_blank', rel: 'noopener' }
   }
 ];

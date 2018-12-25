@@ -1,16 +1,19 @@
-export interface Organization {
-    organizationId: number,
-    organizationName_En: string,
-    organizationName_Np: string,
-    panNo: string,
-    address_En: string,
-    address_Np: string,
-    contactNo: string,
-    email: string,
-    website: string,
-    logo: string,
-    establishedDate_AD: string,
-    establishedDate_BS: string,
-    createDate_AD: string,
-    createDate_BS: string,
+export class Organization {
+       public organizationId: number;
+    public organizationNameEn: string;
+    public organizationNameNp: string;
+    public panNo: string;
+    public addressEn: string;
+    public addressNp: string;
+    public email: string;
+    public website: string;
+    public logo: string;
+    public establishedDateEn: string;
+    public establishedDateNp: string;
+    public createDateEn: string;
+    public createDateNp: string;
+    public modifiedDate: string;
+    public modifiedBy: string;
+
+    constructor() {}
 }

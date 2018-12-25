@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Organization } from '../../../Models/organization';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { OrganizationService } from '../../../Services/organization.service';
 
 @Component({
   selector: 'app-organization-information',
@@ -10,29 +11,38 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class OrganizationInformationComponent implements OnInit {
 
   public form: FormGroup
-  constructor(private fb: FormBuilder) {
-    this.form = this.createform({
-      organizationId: '',
-      organizationName_En: '',
-      organizationName_Np: '',
-      panNo: '',
-      address_En: '',
-      address_Np: '',
-      contactNo: '',
-      email: '',
-      website: '',
-      logo: '',
-      establishedDate_AD: '',
-      establishedDate_BS: '',
-      createDate_AD: '',
-      createDate_BS: ''
+  private orgInfo: Organization = new Organization();
+
+  constructor(private fb: FormBuilder, private orgService: OrganizationService) {
+    this.form = this.createform(this.orgInfo);
+  }
+
+  ngOnInit() {}
+
+  private createform(model:Organization):FormGroup{
+    return this.fb.group({
+      organizationNameEn : [model.organizationNameEn, Validators.required],
+      organizationNameNp: [model.organizationNameNp, Validators.required],
+      panNo: [model.panNo],
+      addressEn: [model.addressEn, Validators.required],
+      addressNp: [model.addressNp],
+      email: [model.email, Validators.compose([Validators.required])],
+      website: [model.website],
+      logo: [model.logo],
+      establishedDateEn: [model.establishedDateEn, Validators.required],
+      establishedDateNp: [model.establishedDateNp],
+      createDateEn: [model.createDateEn, Validators.required],
+      createDateNp: [model.createDateNp, Validators.required],
+      modifiedDate: [model.modifiedDate, Validators.required],
+      modifiedBy: [model.modifiedBy, Validators.required]
     });
   }
-  ngOnInit() {
-   
-  }
-  private createform(model:Organization):FormGroup{
-    return this.fb.group(model);
+
+  private submit(){
+    debugger;
+    this.orgService.insertOrganization(this.form.value).subscribe((org) => {
+      console.log(org);
+    });
   }
 
 

@@ -1,5 +1,5 @@
 export class Organization {
-       public organizationId: number;
+    public organizationId: number;
     public organizationNameEn: string;
     public organizationNameNp: string;
     public panNo: string;
@@ -14,6 +14,4 @@ export class Organization {
     public createDateNp: string;
     public modifiedDate: string;
     public modifiedBy: string;
-
-    constructor() {}
 }

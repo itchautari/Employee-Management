@@ -4,7 +4,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { EAttandanceRoutingModule } from './e-attandance-routing.module';
 import { OrganizationInformationComponent } from './organization-information/organization-information.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [OrganizationInformationComponent],
@@ -12,7 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     EAttandanceRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ]
 })
 export class EAttandanceModule {

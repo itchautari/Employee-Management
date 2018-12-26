@@ -25,7 +25,9 @@ namespace EmployeeManagement
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services
+                .AddCors()
+                .AddMvc();
             var connectionString = Configuration.GetConnectionString("EmployeeDatabase");
 
             services.AddDbContext<EmployeemanagementContext>(options =>
@@ -40,7 +42,14 @@ namespace EmployeeManagement
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            app
+                .UseCors(builder =>
+                    builder
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                )
+                .UseMvc();
         }
     }
 }

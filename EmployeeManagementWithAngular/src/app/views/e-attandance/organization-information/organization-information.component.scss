@@ -1,0 +1,17 @@
+.lngToggleSec {
+    float: right;
+    margin-right: 0px;
+    .form-check {
+        padding-right: 5px;
+    }
+}
+
+.logoImg {
+    max-height: 170px;
+    min-height: 100px;
+    min-width: 100px;
+    max-width: 100%;
+    border: 1px solid #555;
+    margin: 0 auto;
+    cursor: pointer
+}

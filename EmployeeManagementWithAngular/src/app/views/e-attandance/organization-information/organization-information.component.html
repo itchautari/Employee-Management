@@ -2,16 +2,14 @@
     <div class="card">
         <div class="card-header">
             <strong>Organization</strong>
-            <div style="float: right">
-                <div class="row col-form-label">
-                    <div class="form-check form-check-inline mr-1" id="inline-radios">
-                        <input class="form-check-input" name="language" id="english" type="radio" [(ngModel)]="language" [ngModelOptions]="{standalone: true}" [checked]="language=='en'" [value]="'en'">
-                        <label class="form-check-label" for="english">English</label>
-                    </div>
-                    <div class="form-check form-check-inline mr-1">
-                        <input class="form-check-input" name="language" id="nepali" type="radio" [(ngModel)]="language" [ngModelOptions]="{standalone: true}" [checked]="language=='np'" [value]="'np'">
-                        <label class="form-check-label" for="nepali">Nepali</label>
-                    </div>
+            <div class="row col-form-label lngToggleSec">
+                <div class="form-check form-check-inline mr-1" id="inline-radios">
+                    <input class="form-check-input" name="language" id="english" type="radio" [(ngModel)]="language" [ngModelOptions]="{standalone: true}" [checked]="language=='en'" [value]="'en'">
+                    <label class="form-check-label" for="english">English</label>
+                </div>
+                <div class="form-check form-check-inline mr-1">
+                    <input class="form-check-input" name="language" id="nepali" type="radio" [(ngModel)]="language" [ngModelOptions]="{standalone: true}" [checked]="language=='np'" [value]="'np'">
+                    <label class="form-check-label" for="nepali">Nepali</label>
                 </div>
             </div>
         </div>
@@ -81,10 +79,10 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div style="height: calc(100% - 25px);;min-height: 100px; border: 1px solid #555">
-                    </div>
-                    {{labels.logo}}: <input type="file" formControlName="logo" id="fiLogo">
-                    <span class="help-block">Please enter your password</span>
+                    <img [src]="logoImg" class="logoImg" (click)="popupFileChooser()" />
+
+                    <input (change)="fileChanged($event)" type="file" formControlName="logo" id="fiLogo" style="display: none" accept="image/*">
+                    <span class="help-block" style="display:none">Please enter your password</span>
                 </div>
             </div>
         </div>

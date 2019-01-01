@@ -14,6 +14,8 @@ export class OrganizationInformationComponent implements OnInit {
   private form: FormGroup
   private orgInfo: Organization = new Organization();
   private language: string = 'en';
+  private logoImg: string | ArrayBuffer;
+  private logoImage: File;
 
   private labelEn: object = {
     orgName: "Name",
@@ -25,15 +27,15 @@ export class OrganizationInformationComponent implements OnInit {
     estd: "ESTD"
   };
 
-private plcHldrEn : object = {
-  orgName: "Organization Name",
-  panNo: "PAN Number",
-  address: "Address",
-  email: "Organization Email eg:example.gmail.com",
-  website: "Website eg:https://www.examplesite.com",
-  logo: "Logo",
-  estd: "Established Date"
-};
+  private plcHldrEn : object = {
+    orgName: "Organization Name",
+    panNo: "PAN Number",
+    address: "Address",
+    email: "Organization Email eg:example.gmail.com",
+    website: "Website eg:https://www.examplesite.com",
+    logo: "Logo",
+    estd: "Established Date"
+  };
 
   private labelNp: object = {
     orgName: "नाम",
@@ -101,9 +103,31 @@ private plcHldrEn : object = {
     });
   }
 
+  private popupFileChooser(){
+    document.getElementById("fiLogo").click();
+  }
+
+private fileChanged(event){
+  if (event.target.files.length == 0){
+    this.logoImg = ""
+    return;
+  }
+  this.logoImage = event.target.files[0];
+
+  var reader = new FileReader();
+  reader.readAsDataURL(this.logoImage);
+  reader.onload = (_event) => {
+    this.logoImg = reader.result;
+  }
+  
+}
+
   private submit(){
     debugger;
-    this.orgService.insertOrganization(this.form.value).subscribe((org) => {
+this
+  .orgService
+  .insertOrganization(this.logoImage, this.logoImg, this.form.value)
+  .subscribe((org) => {
       console.log(org);
     });
   }

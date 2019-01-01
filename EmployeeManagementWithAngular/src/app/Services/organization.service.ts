@@ -13,17 +13,33 @@ export class OrganizationService {
 
   }
   
-  insertOrganization(orgInfo: Organization):Observable<HttpResponse<Organization>>{
-    debugger;
-    let httpHeaders = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Cache-Control': 'no-cache'
-    });
-    return this.http.post<Organization>(this.insertOrgURL, orgInfo, 
+  // insertOrganization(orgInfo: Organization):Observable<HttpResponse<Organization>>{
+  //   debugger;
+  //   let httpHeaders = new HttpHeaders({
+  //     'Content-Type': 'application/json',
+  //     'Cache-Control': 'no-cache'
+  //   });
+  //   return this.http.post<Organization>(this.insertOrgURL, orgInfo, 
+  //     {
+  //     headers: httpHeaders,
+  //     observe: 'response'
+  //   });
+  // }
+
+  insertOrganization(logoImage: File, logoImg: ArrayBuffer| string, orgInfo: Organization): Observable<HttpResponse<Organization>> {
+    let formData: FormData = new FormData()
+    formData.append('image', logoImage, logoImage.name);
+    let orgWF = {
+      fileName : logoImage.name,
+      // logoImg : formData,
+      organizationInfo: orgInfo,
+    };
+    
+    return this.http.post<Organization>(this.insertOrgURL, 
+      orgWF,
       {
-      headers: httpHeaders,
-      observe: 'response'
-    });
+        observe: 'response'
+      });
   }
 
 //   insertOrg(orgInfo: Organization): Observable<HttpResponse<string>> {

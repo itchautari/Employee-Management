@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Assets\Uploads\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -15,6 +16,12 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\EmployeeMGNT%2528Group%2529\BackEnd\EmployeeManagement\Assets\Uploads\Images\Ramji_Passport.jpg" />
+    <None Include="..\..\..\EmployeeMGNT%2528Group%2529\BackEnd\EmployeeManagement\Assets\Uploads\Images\Ramji_Photo[1].jpg" />
+    <None Include="..\..\..\EmployeeMGNT%2528Group%2529\BackEnd\EmployeeManagement\Assets\Uploads\Images\Working permit.jpg" />
   </ItemGroup>
 
 </Project>

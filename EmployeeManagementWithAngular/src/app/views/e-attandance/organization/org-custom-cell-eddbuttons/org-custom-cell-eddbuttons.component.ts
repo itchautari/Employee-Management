@@ -32,6 +32,6 @@ export class OrgCustomCellEDDButtonsComponent implements OnInit {
   }
 
   editData(){
-    this.router.navigate(['eattandance/editorganization/'+this.rowData.organizationId]);
+    this.router.navigate(['eattandance/organization/'+this.rowData.organizationId]);
   }
 }

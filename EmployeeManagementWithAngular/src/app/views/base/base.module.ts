@@ -28,11 +28,11 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 // Pagination Component
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-import { PopoversComponent } from './popovers.component';
+import {PaginationsComponent} from './paginations.component';
 
 // Popover Component
 import { PopoverModule } from 'ngx-bootstrap/popover';
-import { PaginationsComponent } from './paginations.component';
+import {PopoversComponent} from './popovers.component';
 
 // Progress Component
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';

@@ -5,7 +5,7 @@ export class SharedProps {
     public form: FormGroup
     public orgInfo: Organization = new Organization();
     public language: string = 'en';
-    public logoImg: string | ArrayBuffer;
+    public logoImg: string | ArrayBuffer = "";
     public logoImage: File;
 
     public labelEn: object = {
@@ -76,7 +76,7 @@ export class SharedProps {
         return this.fb.group({
             organizationId: [model.organizationId],
             organizationNameEn: [model.organizationNameEn, Validators.required],
-            organizationNameNp: [model.organizationNameNp, Validators.required],
+            organizationNameNp: [model.organizationNameNp],
             panNo: [model.panNo],
             addressEn: [model.addressEn, Validators.required],
             addressNp: [model.addressNp],
@@ -86,7 +86,7 @@ export class SharedProps {
             establishedDateEn: [model.establishedDateEn, Validators.required],
             establishedDateNp: [model.establishedDateNp],
             createDateEn: [model.createDateEn, Validators.required],
-            createDateNp: [model.createDateNp, Validators.required],
+            createDateNp: [model.createDateNp],
             modifiedDate: [model.modifiedDate, Validators.required],
             modifiedBy: [model.modifiedBy, Validators.required]
         });

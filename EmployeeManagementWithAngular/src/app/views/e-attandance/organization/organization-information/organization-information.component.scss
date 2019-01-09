@@ -16,3 +16,29 @@
     margin: 0 auto;
     cursor: pointer
 }
+
+input {
+    padding: 4px 8px !important;
+}
+
+.input-group-append {
+    cursor: help;
+}
+
+.errorAlertSection {
+    z-index: 1020;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    overflow-y: scroll;
+    max-height: 98vh;
+    opacity: .8;
+}
+
+.errorAlertSection::-webkit-scrollbar {
+    width: 0px;
+}
+
+.alert {
+    margin-bottom: 5px !important;
+}

@@ -10,6 +10,10 @@ import { AgGridModule } from 'ag-grid-angular';
 import { OrgCustomCellEDDButtonsComponent } from './organization/org-custom-cell-eddbuttons/org-custom-cell-eddbuttons.component';
 import { EditOrganizationComponent } from './organization/edit-organization/edit-organization.component';
 
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { AlertModule } from 'ngx-bootstrap/alert';
+
 @NgModule({
   declarations: [OrganizationInformationComponent, OrganizationListComponent, OrgCustomCellEDDButtonsComponent, EditOrganizationComponent],
   imports: [
@@ -18,7 +22,10 @@ import { EditOrganizationComponent } from './organization/edit-organization/edit
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    AgGridModule.withComponents([OrganizationListComponent])
+    AgGridModule.withComponents([OrganizationListComponent]),
+    PopoverModule.forRoot(),
+    TooltipModule.forRoot(),
+    AlertModule.forRoot(),
   ],
   entryComponents: [
     OrgCustomCellEDDButtonsComponent

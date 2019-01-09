@@ -12,10 +12,10 @@ export class OrganizationService {
 
   // public editOrgSubject = new BehaviorSubject(undefined);
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
 
   }
-  
+
   // insertOrganization(orgInfo: Organization):Observable<HttpResponse<Organization>>{
   //   debugger;
   //   let httpHeaders = new HttpHeaders({
@@ -33,17 +33,17 @@ export class OrganizationService {
   //   this.editOrgSubject.next(org);
   // }
 
-  insertOrganization(logoImage: File, logoImg: ArrayBuffer| string, orgInfo: Organization): Observable<HttpResponse<Organization>> {
-let formData : FormData = this.generateFormData(orgInfo);
-formData.append("logoImg", logoImage, logoImage.name);
+  insertOrganization(logoImage: File, logoImg: ArrayBuffer | string, orgInfo: Organization): Observable<HttpResponse<Organization>> {
+    let formData: FormData = this.generateFormData(orgInfo);
+    formData.append("logoImg", logoImage, logoImage.name);
     // let orgWF = {
     //   fileName : logoImage.name,
     //   logoImg : logoImg,
     //   organizationInfo: orgInfo,
     // };
-    
-    return this.http.post<Organization>(this.URL, 
-formData,
+
+    return this.http.post<Organization>(this.URL,
+      formData,
       {
         observe: 'response'
       });
@@ -57,7 +57,7 @@ formData,
     });
   }
 
-  updateOrganization(logoImage: File, logoImg: ArrayBuffer | string, org: Organization): Observable<HttpResponse<Organization>>{
+  updateOrganization(logoImage: File, logoImg: ArrayBuffer | string, org: Organization): Observable<HttpResponse<Organization>> {
 
     let formData: FormData = this.generateFormData(org);
     formData.append("logoImg", logoImage, logoImage.name);
@@ -87,9 +87,9 @@ formData,
       });
   }
 
-  deleteOrganization(orgId: number): any{
-    let httpHeaders = new HttpHeaders({'Content-Type': 'application/json', 'Cache-Control': 'no-cache'});
-    return this.http.delete<any>(this.URL + "/" + orgId, {headers: httpHeaders});
+  deleteOrganization(orgId: number): any {
+    let httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' });
+    return this.http.delete<any>(this.URL + "/" + orgId, { headers: httpHeaders });
   }
 
   public generateFormData(data: any): FormData {
